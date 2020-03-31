@@ -1,0 +1,12 @@
+name: mainenv
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - jupyter
+  - numpy
+  - pandas
+  - matplotlib
+  - scikit-learn
+  - scipy
+  - ensembl-vep

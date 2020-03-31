@@ -1,0 +1,20 @@
+version: "3"
+services:
+    rstudio:
+        build:
+            context: .
+            dockerfile: rstudio/Dockerfile
+        environment: 
+            - USER=rstudio
+            - PASSWORD=anotherPass1239#
+        ports:
+            - "8787:8787"
+        depends_on:
+            - db
+    db:
+        image: "jschec/patient-demo-db-mssql:patient-db"
+        ports:
+            - "1433:1433"
+        environment:
+            SA_PASSWORD: "testDBpass1234!"
+            ACCEPT_EULA: "Y"
